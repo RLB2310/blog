@@ -1,2 +1,3 @@
-# blog
-My tech blog
+# My Tech Blog
+Selfhosting log and journal created with Hugo
+
