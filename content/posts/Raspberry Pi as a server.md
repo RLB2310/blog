@@ -7,10 +7,15 @@ date = 2024-06-26T16:32:01+10:00
 
 Why settle for something done poorly when you can do it better yourself? That's the approach I took with creating a general, all-in-one media server / NAS. The main concern was relying on external, third-party software and services to conduct daily tech and media activities. The solution? Do it yourself. I've done exactly that, setting up a Raspberry Pi that I can tinker with and use daily, helping not only me but also my friends and family.
 
-Using a [Raspberry Pi](https://www.raspberrypi.com/) 4 (4GB), an external hard-drive, and SD card, I've managed to get a mini PC running Raspberry Pi OS Lite for under $300. Sounds like a lot, but once you see what it can do and the money it's saving, it's arguably worth it.
+Using a [Raspberry Pi](https://www.raspberrypi.com/) 4 (4GB), an external hard-drive, and SD card, I've managed to get a mini PC running Debian Bullseye
+ for under $300. Sounds like a lot, but once you see what it can do and the money it's saving, it's arguably worth it.
+
+![text](/assets/Images/Pi.png)
 
 # Why a Raspbery Pi?
-Mini PC's in Australia (and mobile devices in general) are expensive, meaning that sticking to the popular, tried and true Raspberry Pi ARM mini PC. Running a device 24/7 also raises concerns about power consumption. Runing my desktop PC idling at 80 Watts obviously isn't ideal. So a the Raspberry Pi is an obvious choice, idling at only 3-4 Watts on average with background tasks.
+Mini PC's in Australia (and mobile devices in general) are expensive, meaning that sticking to the popular, tried and true Raspberry Pi ARM mini PC was the way to go (for me at least). Running a device 24/7 also raises concerns about power consumption. Runing my desktop PC idling at 80 Watts obviously isn't ideal. So the Raspberry Pi is an obvious choice, idling at only 3-4 Watts on average with background tasks.
+
+
 
 # Uses 
 
@@ -20,7 +25,12 @@ Currently some of the uses that the provides for me is an extensive amount of me
 
 Majority of the services are deployed through [Docker](https://www.docker.com/) (even though I prefer barebones) because of the automatic image updates through [Watchtower](https://github.com/containrrr/watchtower). Some services I had trouble with accessing specific folders mounted on the external drive through Docker, alognside some permission conflicts. This was solved by using the barebones version.
 
-Managing all the docker containers was complete through 
+Managing all the docker containers was complete through [Portainer](https://www.portainer.io/), keeping the complicated Docker backend in a manageable web GUI.
 
 ![text2](/assets/Images/portainer.png)
 
+# External LAN access, security, and compromises
+
+One downside of selfhosting is the lack of public access. Obviously you can port-forward, but that comes with extreme risks for not only your devices but the whole network. So that was immediately not an option for me. Next up was using a VPN. I had learnt of businesses who use VPNs for remote workers, giving access to company files and resources. So this was my next option. It allowed me to have the same amount of access to my resources, without compromising the rest of my network. The most popular approach to this is selfhosting a [Wireguard](https://www.wireguard.com/) or [OpenVPN](https://openvpn.net/) instance. Quite a complicated approach, and lacked some features I wanted such as the ability to use my Raspberryi Pi as an exit-node. Finally, I had settled for [Tailscale](https://tailscale.com/). It was a perfect solution to accessing my server from other networks (except school, that'll be covered in Linux for school), all while being completely free for hobbyists like myself.
+
+![text](/assets/Images/Tailscale.png)

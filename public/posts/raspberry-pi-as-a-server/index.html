@@ -34,7 +34,7 @@
   <meta itemprop="description" content="Setting up a self-hosted home server Why settle for something done poorly when you can do it better yourself? That’s the approach I took with creating a general, all-in-one media server / NAS. The main concern was relying on external, third-party software and services to conduct daily tech and media activities. The solution? Do it yourself. I’ve done exactly that, setting up a Raspberry Pi that I can tinker with and use daily, helping not only me but also my friends and family.">
   <meta itemprop="datePublished" content="2024-06-26T16:32:01+10:00">
   <meta itemprop="dateModified" content="2024-06-26T16:32:01+10:00">
-  <meta itemprop="wordCount" content="371"></head>
+  <meta itemprop="wordCount" content="553"></head>
 <body>
 
 <div class="container"><header>
@@ -45,15 +45,20 @@
 <div class="content-container">
 <main><h1>Raspberry Pi as a Server</h1><h1 id="setting-up-a-self-hosted-home-server">Setting up a self-hosted home server</h1>
 <p>Why settle for something done poorly when you can do it better yourself? That&rsquo;s the approach I took with creating a general, all-in-one media server / NAS. The main concern was relying on external, third-party software and services to conduct daily tech and media activities. The solution? Do it yourself. I&rsquo;ve done exactly that, setting up a Raspberry Pi that I can tinker with and use daily, helping not only me but also my friends and family.</p>
-<p>Using a <a href="https://www.raspberrypi.com/">Raspberry Pi</a> 4 (4GB), an external hard-drive, and SD card, I&rsquo;ve managed to get a mini PC running Raspberry Pi OS Lite for under $300. Sounds like a lot, but once you see what it can do and the money it&rsquo;s saving, it&rsquo;s arguably worth it.</p>
+<p>Using a <a href="https://www.raspberrypi.com/">Raspberry Pi</a> 4 (4GB), an external hard-drive, and SD card, I&rsquo;ve managed to get a mini PC running Debian Bullseye
+for under $300. Sounds like a lot, but once you see what it can do and the money it&rsquo;s saving, it&rsquo;s arguably worth it.</p>
+<p><img src="/assets/Images/Pi.png" alt="text"></p>
 <h1 id="why-a-raspbery-pi">Why a Raspbery Pi?</h1>
-<p>Mini PC&rsquo;s in Australia (and mobile devices in general) are expensive, meaning that sticking to the popular, tried and true Raspberry Pi ARM mini PC. Running a device 24/7 also raises concerns about power consumption. Runing my desktop PC idling at 80 Watts obviously isn&rsquo;t ideal. So a the Raspberry Pi is an obvious choice, idling at only 3-4 Watts on average with background tasks.</p>
+<p>Mini PC&rsquo;s in Australia (and mobile devices in general) are expensive, meaning that sticking to the popular, tried and true Raspberry Pi ARM mini PC was the way to go (for me at least). Running a device 24/7 also raises concerns about power consumption. Runing my desktop PC idling at 80 Watts obviously isn&rsquo;t ideal. So the Raspberry Pi is an obvious choice, idling at only 3-4 Watts on average with background tasks.</p>
 <h1 id="uses">Uses</h1>
 <p>Having 4GB of RAM leaves a bit of room for Docker containers and web services, but obviously doesn&rsquo;t allow for extensive simultaneous hardware-acceleration or any gaming. Plenty of memory for my use case though, measuring the current usage with all the background processes, it uses about 2.9 out of the 4GB of memory available, leaving heaps of breathing room.</p>
 <p>Currently some of the uses that the provides for me is an extensive amount of media management, from Plex and Jellyfin, providing access to movies and tv shows personally sourced from either blu-ray or on disc, to a music player backend using Navidrome which let&rsquo;s me source my own music and access it anywhere.</p>
 <p>Majority of the services are deployed through <a href="https://www.docker.com/">Docker</a> (even though I prefer barebones) because of the automatic image updates through <a href="https://github.com/containrrr/watchtower">Watchtower</a>. Some services I had trouble with accessing specific folders mounted on the external drive through Docker, alognside some permission conflicts. This was solved by using the barebones version.</p>
-<p>Managing all the docker containers was complete through</p>
+<p>Managing all the docker containers was complete through <a href="https://www.portainer.io/">Portainer</a>, keeping the complicated Docker backend in a manageable web GUI.</p>
 <p><img src="/assets/Images/portainer.png" alt="text2"></p>
+<h1 id="external-lan-access-security-and-compromises">External LAN access, security, and compromises</h1>
+<p>One downside of selfhosting is the lack of public access. Obviously you can port-forward, but that comes with extreme risks for not only your devices but the whole network. So that was immediately not an option for me. Next up was using a VPN. I had learnt of businesses who use VPNs for remote workers, giving access to company files and resources. So this was my next option. It allowed me to have the same amount of access to my resources, without compromising the rest of my network. The most popular approach to this is selfhosting a <a href="https://www.wireguard.com/">Wireguard</a> or <a href="https://openvpn.net/">OpenVPN</a> instance. Quite a complicated approach, and lacked some features I wanted such as the ability to use my Raspberryi Pi as an exit-node. Finally, I had settled for <a href="https://tailscale.com/">Tailscale</a>. It was a perfect solution to accessing my server from other networks (except school, that&rsquo;ll be covered in Linux for school), all while being completely free for hobbyists like myself.</p>
+<p><img src="/assets/Images/Tailscale.png" alt="text"></p>
 <nav class="pagination"><a class="nav nav-prev" href="//localhost:1313/posts/" title="Posts"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - Posts</a>
 
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc .</p>
