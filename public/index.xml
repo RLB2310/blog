@@ -6,14 +6,14 @@
     <description>Recent content on Rylan&#39;s Tech Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Jan 2024 07:07:07 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jun 2024 16:32:01 +1000</lastBuildDate>
     <atom:link href="localhost/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>localhost/posts/my-first-post/</link>
-      <pubDate>Sun, 14 Jan 2024 07:07:07 +0100</pubDate>
-      <guid>localhost/posts/my-first-post/</guid>
-      <description>Introduction This is bold text, and this is emphasized text.&#xA;Visit the Hugo website!</description>
+      <title>Raspberry Pi as a Server</title>
+      <link>localhost/posts/raspberry-pi-as-a-server/</link>
+      <pubDate>Wed, 26 Jun 2024 16:32:01 +1000</pubDate>
+      <guid>localhost/posts/raspberry-pi-as-a-server/</guid>
+      <description> </description>
     </item>
   </channel>
 </rss>
