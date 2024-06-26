@@ -22,7 +22,5 @@ Majority of the services are deployed through [Docker](https://www.docker.com/) 
 
 Managing all the docker containers was complete through 
 
-![text1](https://raw.githubusercontent.com/RLB2310/RLB2310.github.io/main/assets/Images/portainer.png)
 ![text2](/assets/Images/portainer.png)
 
-![text3](https://github.com/RLB2310/RLB2310.github.io/blob/main/assets/Images/portainer.png)
