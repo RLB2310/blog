@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>localhost/</loc>
+    <loc>//localhost:1313/</loc>
     <lastmod>2024-06-26T16:32:01+10:00</lastmod>
   </url><url>
-    <loc>localhost/posts/</loc>
+    <loc>//localhost:1313/posts/</loc>
     <lastmod>2024-06-26T16:32:01+10:00</lastmod>
   </url><url>
-    <loc>localhost/posts/raspberry-pi-as-a-server/</loc>
+    <loc>//localhost:1313/posts/raspberry-pi-as-a-server/</loc>
     <lastmod>2024-06-26T16:32:01+10:00</lastmod>
   </url><url>
-    <loc>localhost/categories/</loc>
+    <loc>//localhost:1313/categories/</loc>
   </url><url>
-    <loc>localhost/tags/</loc>
+    <loc>//localhost:1313/tags/</loc>
   </url>
 </urlset>

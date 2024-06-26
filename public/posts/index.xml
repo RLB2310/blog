@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Rylan&#39;s Tech Blog</title>
-    <link>localhost/posts/</link>
+    <link>//localhost:1313/posts/</link>
     <description>Recent content in Posts on Rylan&#39;s Tech Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Jun 2024 16:32:01 +1000</lastBuildDate>
-    <atom:link href="localhost/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Raspberry Pi as a Server</title>
-      <link>localhost/posts/raspberry-pi-as-a-server/</link>
+      <link>//localhost:1313/posts/raspberry-pi-as-a-server/</link>
       <pubDate>Wed, 26 Jun 2024 16:32:01 +1000</pubDate>
-      <guid>localhost/posts/raspberry-pi-as-a-server/</guid>
-      <description> </description>
+      <guid>//localhost:1313/posts/raspberry-pi-as-a-server/</guid>
+      <description>Setting up a self-hosted home server Why settle for something done poorly when you can do it better yourself? That&amp;rsquo;s the approach I took with creating a general, all-in-one media server / NAS. The main concern was relying on external, third-party software and services to conduct daily tech and media activities. The solution? Do it yourself. I&amp;rsquo;ve done exactly that, setting up a Raspberry Pi that I can tinker with and use daily, helping not only me but also my friends and family.</description>
     </item>
   </channel>
 </rss>

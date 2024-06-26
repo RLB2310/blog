@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Raspberry Pi as a Server - Rylan&#39;s Tech Blog</title>
+<meta name="generator" content="Hugo 0.127.0">
+<link href="//localhost:1313//index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="//localhost:1313/posts/raspberry-pi-as-a-server/">
+<link rel="stylesheet" href="//localhost:1313/css/theme.min.css">
+<link rel="stylesheet" href="//localhost:1313/css/chroma.min.css">
+<script defer src="//localhost:1313//js/fontawesome6/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck=" crossorigin="anonymous"></script>
+<script src="//localhost:1313/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:url" content="//localhost:1313/posts/raspberry-pi-as-a-server/">
+  <meta property="og:site_name" content="Rylan&#39;s Tech Blog">
+  <meta property="og:title" content="Raspberry Pi as a Server">
+  <meta property="og:description" content="Setting up a self-hosted home server Why settle for something done poorly when you can do it better yourself? That’s the approach I took with creating a general, all-in-one media server / NAS. The main concern was relying on external, third-party software and services to conduct daily tech and media activities. The solution? Do it yourself. I’ve done exactly that, setting up a Raspberry Pi that I can tinker with and use daily, helping not only me but also my friends and family.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-06-26T16:32:01+10:00">
+    <meta property="article:modified_time" content="2024-06-26T16:32:01+10:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Raspberry Pi as a Server">
+  <meta name="twitter:description" content="Setting up a self-hosted home server Why settle for something done poorly when you can do it better yourself? That’s the approach I took with creating a general, all-in-one media server / NAS. The main concern was relying on external, third-party software and services to conduct daily tech and media activities. The solution? Do it yourself. I’ve done exactly that, setting up a Raspberry Pi that I can tinker with and use daily, helping not only me but also my friends and family.">
+
+  <meta itemprop="name" content="Raspberry Pi as a Server">
+  <meta itemprop="description" content="Setting up a self-hosted home server Why settle for something done poorly when you can do it better yourself? That’s the approach I took with creating a general, all-in-one media server / NAS. The main concern was relying on external, third-party software and services to conduct daily tech and media activities. The solution? Do it yourself. I’ve done exactly that, setting up a Raspberry Pi that I can tinker with and use daily, helping not only me but also my friends and family.">
+  <meta itemprop="datePublished" content="2024-06-26T16:32:01+10:00">
+  <meta itemprop="dateModified" content="2024-06-26T16:32:01+10:00">
+  <meta itemprop="wordCount" content="371"></head>
+<body>
+
+<div class="container"><header>
+<h1>Rylan&#39;s Tech Blog</h1>
+</header>
+
+
+<div class="content-container">
+<main><h1>Raspberry Pi as a Server</h1><h1 id="setting-up-a-self-hosted-home-server">Setting up a self-hosted home server</h1>
+<p>Why settle for something done poorly when you can do it better yourself? That&rsquo;s the approach I took with creating a general, all-in-one media server / NAS. The main concern was relying on external, third-party software and services to conduct daily tech and media activities. The solution? Do it yourself. I&rsquo;ve done exactly that, setting up a Raspberry Pi that I can tinker with and use daily, helping not only me but also my friends and family.</p>
+<p>Using a <a href="https://www.raspberrypi.com/">Raspberry Pi</a> 4 (4GB), an external hard-drive, and SD card, I&rsquo;ve managed to get a mini PC running Raspberry Pi OS Lite for under $300. Sounds like a lot, but once you see what it can do and the money it&rsquo;s saving, it&rsquo;s arguably worth it.</p>
+<h1 id="why-a-raspbery-pi">Why a Raspbery Pi?</h1>
+<p>Mini PC&rsquo;s in Australia (and mobile devices in general) are expensive, meaning that sticking to the popular, tried and true Raspberry Pi ARM mini PC. Running a device 24/7 also raises concerns about power consumption. Runing my desktop PC idling at 80 Watts obviously isn&rsquo;t ideal. So a the Raspberry Pi is an obvious choice, idling at only 3-4 Watts on average with background tasks.</p>
+<h1 id="uses">Uses</h1>
+<p>Having 4GB of RAM leaves a bit of room for Docker containers and web services, but obviously doesn&rsquo;t allow for extensive simultaneous hardware-acceleration or any gaming. Plenty of memory for my use case though, measuring the current usage with all the background processes, it uses about 2.9 out of the 4GB of memory available, leaving heaps of breathing room.</p>
+<p>Currently some of the uses that the provides for me is an extensive amount of media management, from Plex and Jellyfin, providing access to movies and tv shows personally sourced from either blu-ray or on disc, to a music player backend using Navidrome which let&rsquo;s me source my own music and access it anywhere.</p>
+<p>Majority of the services are deployed through <a href="https://www.docker.com/">Docker</a> (even though I prefer barebones) because of the automatic image updates through <a href="https://github.com/containrrr/watchtower">Watchtower</a>. Some services I had trouble with accessing specific folders mounted on the external drive through Docker, alognside some permission conflicts. This was solved by using the barebones version.</p>
+<p>Managing all the docker containers was complete through</p>
+<p><img src="" alt="text"></p>
+<nav class="pagination"><a class="nav nav-prev" href="//localhost:1313/posts/" title="Posts"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - Posts</a>
+
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc .</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="open-menu">
+<ul>
+<li class=""><a href="//localhost:1313/">Home</a></li>
+
+<li class="parent"><a href="//localhost:1313/posts/">Posts</a>
+  
+<ul class="sub-menu">
+<li class="active"><a href="//localhost:1313/posts/raspberry-pi-as-a-server/">Raspberry Pi as a Server</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>
