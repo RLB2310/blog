@@ -19,3 +19,14 @@ Discord has it's own API that is built in multiple programming languages such as
 
 The bulk of the code is setting up the bot alongside creating it in the [developer portal](https://discord.com/build/app-developers)
 
+Starting with the imports:
+
+''' import threading
+import discord
+import os
+import random
+import requests
+import time
+import asyncio
+from discord.ext import tasks
+import subprocess '''

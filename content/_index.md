@@ -4,7 +4,7 @@
 
 https://github.com/RLB2310
 
-A simple webpage documenting my projects, ranging from selfhosting on my Raspberry Pi, to organising and customising my Linux systems.
+A simple webpage documenting my projects, ranging from selfhosting on my Raspberry Pi, to organising and customising my desktops and laptops.
 
 Some examples of what I've documented :
 
@@ -12,6 +12,6 @@ Some examples of what I've documented :
 
 - Efficiently managing dual operating systems on my personal desktop computer
 
-- Using Linux for schoolwork and solving the Microsoft problem
+- Using Linux for schoolwork and solving the 'Microsoft' problem
 
 
