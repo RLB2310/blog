@@ -49,8 +49,9 @@ client = discord.Client(intents=intents)
 The intents are defaults  for the Discord bot client. They will be the same across almost every bot with only the naming scheme differing.
 
 The bot's "$help" command uses a dictionary of "command:descrption" pairs provided to the user in the Discord channel.
- 
-'''
+
+
+``` 
 commands_list = [
     {'command': '$help', 'description': 'Show help message for document requests'},
     {'command': '$list', 'description': 'List available commands'},
@@ -61,6 +62,7 @@ commands_list = [
     {'command': '$scan', 'description': 'Scan documents for malware'},
     {'command': '$temp', 'description': 'Check the server temperature'},
 ]
-'''
+```
+
 
 ![text](/assets/Images/Help.png)
