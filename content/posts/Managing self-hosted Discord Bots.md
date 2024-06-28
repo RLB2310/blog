@@ -13,6 +13,8 @@ This provides me with easy access to my server, giving me quick functions that I
 
 The bot is also present in a server with my friends. We share a lot of documents over email, so I have also created another bot that I will cover elsewhere which handles file sharing.I also provide services for game servers for them. This also allows some of my less tech-savvy friends to interact with my server in a clean and simple interface.
 
+![text](/assets/Images/Bots.png)
+
 # The backend
 
 To self-host discord bots, you need a device that is on as often as possible. This could be a cloud instance such as Linode, or just a spare computer.
@@ -46,9 +48,9 @@ client = discord.Client(intents=intents)
 
 The intents are defaults  for the Discord bot client. They will be the same across almost every bot with only the naming scheme differing.
 
-The bot's "$help" command is 
-
-# Commands list for $list command
+The bot's "$help" command uses a dictionary of "command:descrption" pairs provided to the user in the Discord channel.
+ 
+'''
 commands_list = [
     {'command': '$help', 'description': 'Show help message for document requests'},
     {'command': '$list', 'description': 'List available commands'},
@@ -59,3 +61,6 @@ commands_list = [
     {'command': '$scan', 'description': 'Scan documents for malware'},
     {'command': '$temp', 'description': 'Check the server temperature'},
 ]
+'''
+
+![text](/assets/Images/Help.png)
