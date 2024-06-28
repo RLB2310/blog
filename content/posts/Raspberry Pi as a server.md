@@ -40,6 +40,6 @@ Tailscale provides individual users with a free Tailnet with a couple of devices
 By doing this, I have removed the need to port forward at all, keeping everything closed on my network. This was the primary concern with providing external access to services.
 
 
-Realisticly there's so much more to go over with the Raspberry Pi and services I've set up, so some of the more complex and tedious services will have their own page. It will probably include things like like Nginx reverse-proxy for internal DNS control, as well as using Silverbullet for note taking with a server.
+Realistically there's so much more to go over with the Raspberry Pi and services I've set up, so some of the more complex and tedious services will have their own page. It will probably include things like like Nginx reverse-proxy for internal DNS control, as well as using Silverbullet for note taking with a server.
 
 
