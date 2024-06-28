@@ -21,7 +21,7 @@ The bulk of the code is setting up the bot alongside creating it in the [develop
 
 Starting with the imports:
 
-''' import threading
+``` import threading
 import discord
 import os
 import random
@@ -29,4 +29,13 @@ import requests
 import time
 import asyncio
 from discord.ext import tasks
-import subprocess '''
+import subprocess ```
+
+The Discord library is imported as the main API I'll be using.
+
+Then I state the intents:
+
+``` intents = discord.Intents.default()
+intents.message_content = True
+
+client = discord.Client(intents=intents)```
