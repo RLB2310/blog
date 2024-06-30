@@ -15,7 +15,8 @@ The bot is also present in a server with my friends. We share a lot of documents
 
 ![text](/assets/Images/Bots.png)
 
-# The backend
+# General Bot
+## The backend
 
 To self-host discord bots, you need a device that is on as often as possible. This could be a cloud instance such as Linode, or just a spare computer.
 
@@ -34,6 +35,8 @@ import time
 import asyncio
 from discord.ext import tasks
 import subprocess 
+
+
 ```
 
 The Discord library is imported as the main API I'll be using.
@@ -63,7 +66,9 @@ commands_list = [
     {'command': '$temp', 'description': 'Check the server temperature'},
 ]
 ```
+
 I then create an elif statement to check for the prefix of the message being "$help"
+
 ```
 elif message.content.startswith('$help'):
         command_descriptions = [f"{cmd['command']}: {cmd['description']}" for cmd in commands_list]
@@ -78,7 +83,7 @@ Now, whenever someone messages "$help", the bot responds accordingly.
 
 This is only one example of the bot performing simple tasks. There's a multitude of commands such as getting the temperature of the server, getting the storage status, or listing the documents available.
 
-# Storage state and space 
+## Storage state and space 
 
 Determining the state of the storage on my server is helpful to identifying whether I need to make space and whether the server is downloading something at that point in time.
 
@@ -125,7 +130,7 @@ Going back to the message, using the total size, it sends a message to the chann
             pass
 ```
 
-# ClamAV Integration
+## ClamAV Integration
 
 [ClamAV](https://www.clamav.net/) is a popular open-source antivirus engine for detecting trojans, viruses, malware & other malicious threats. Although it's not necessarily required and can be considered quite "extra", it's always better to be safe than sorry. I have a bunch of open-source applications from outside of the Debian repositories from Github and the likes, so having that extra protection is always good, especially when I can't scan through the whole project that I'm using.
 
@@ -142,3 +147,19 @@ elif message.content.startswith('$scan'):
         await message.channel.send(f'ClamAV Scan Results for Documents:\n```{scan_result}```')
 ```
 
+# Croc file sharing 
+
+Finding a suitable solution to file sharing large documents was difficult to find. It's not that there's a lack of options, there's hundreds. The only problem is that they all have a file limit. Most online versions offer a free 500MB transfer maximum. Considering I was wanting to transfer a large Python program to a friend that was over that, and I wanted to end up transfering over 50GB of files, It wouldn't be applicable for me. 
+
+Next I searched for self-hosted apps. [Wormhole]() is a popular app, which is open-source and allows unlimited file transfers as it uses public relays to conduct transfers. I used Wormhole for testing and noticed that it would often pause or cancel in the middle of a transfer. This was problematic, especially during large multi-gigabyte transfers. So Wormhole wasn't going to work.
+
+[Croc]() is essentially the same as Wormhole except it's written in Golang and includes a couple more key features. Croc hashes files before the transfer starts, using encryption to protect your files. Similarly to Wormhole, Croc generates a code that another computer (local or outside of the network) can use to transfer the files/folder. 
+
+A key difference that Croc includes that makes it applicable in my situation is the ability to continue/resume downloads that have cancelled. It requires you to create a code for the same files/folder and for the other computer to continue the transfer. As to how it continues and understands the files that needs to be resumed, I am unsure of. It lacks extensive documentation, however, if I do so much as to change anythng in the files (properties from name, bytes within it) the resume won't pick up. This most probably means that it compares the hashes of the files to determine what files are the same.
+
+So Croc works perfectly. With speeds in-line with my upload trasnfer speeds, file transfers are relatively fast. Now I had to make it as automated as possible.
+
+Croc required a large amount of work from me. I can't always provide the codes for each document that I have, sometimes my friends need notes for school late at night. So working it into a Discord bot, similar to what was done above was a good solution.
+
+## Croc and Discord
+   
