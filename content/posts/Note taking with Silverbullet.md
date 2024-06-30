@@ -9,7 +9,7 @@ Majority of the notes I take for school are located under Microsoft's OneNote. L
 
 # Obsidian
 
-Obsidian is a closed-source markdown note application, available on all platforms. It seemed perfect. However the syncing of notes was a paid feature, and although using external applications such as [Syncthing]() or [Nextcloud](). Both had their own issues however. Syncthing was extremely bad at file versioning, to the point where I would spent more time finding the correct version then actually writing notes. Nextcloud was really volatile, breaking at least once a week and forcing me to recreate the whole Docker container again.
+Obsidian is a closed-source markdown note application, available on all platforms. It seemed perfect. However the syncing of notes was a paid feature, and although using external applications such as [Syncthing]() or [Nextcloud]() was available, both had their own issues however. Syncthing was extremely inconsistent at file versioning, to the point where I would spent more time finding the correct version then actually writing notes. Nextcloud was really volatile, breaking at least once a week and forcing me to recreate the whole Docker container again.
 
 # The final solution
 

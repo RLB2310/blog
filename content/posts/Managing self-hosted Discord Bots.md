@@ -111,7 +111,7 @@ def get_directory_size(directory):
    return total_size
 ```
 
-Going back to the message, using the total size, it sends a message to the channel regarding the size, then waits 20 seconds before repeating, to then compare the two sizes and determine the acivity of the server as increasing or not.
+Going back to the message, using the total size, it sends a message to the channel regarding the size, then waits 20 seconds before repeating, to then compare the two sizes and determine the activity of the server as increasing or not.
 
 ```
         gb_init = initial_size / 1024**3
@@ -124,3 +124,21 @@ Going back to the message, using the total size, it sends a message to the chann
         else:
             pass
 ```
+
+# ClamAV Integration
+
+[ClamAV](https://www.clamav.net/) is a popular open-source antivirus engine for detecting trojans, viruses, malware & other malicious threats. Although it's not necessarily required and can be considered quite "extra", it's always better to be safe and sorry. I have a bunch of open-source applications from outside of the Debian repositories from Github and the likes, so having that extra protection is always good, especially when I can't scan through the whole project that I'm using.
+
+So ClamAV isn't difficult to set up. Simply downloading from the Debian repositories and updating the virus database, ClamAV let's you conduct quick folder scans, as well as seperate applications for real-time protection. 
+
+Creating a command for Discord wasn't difficult either, as ClamAV is already a command line program. 
+
+Simply by checking the message for the scan command, we can then run an asynchronous call for the ClamAV command line program and then get the results from the directory and send it as a message.
+ 
+```
+elif message.content.startswith('$scan'):
+        await message.channel.send("Scanning documents for malware... This may take up to 10 mins")
+        scan_result = await run_clamav_scan('/media/root/EXTHDD/Documents')
+        await message.channel.send(f'ClamAV Scan Results for Documents:\n```{scan_result}```')
+```
+
