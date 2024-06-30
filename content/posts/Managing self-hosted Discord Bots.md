@@ -127,7 +127,7 @@ Going back to the message, using the total size, it sends a message to the chann
 
 # ClamAV Integration
 
-[ClamAV](https://www.clamav.net/) is a popular open-source antivirus engine for detecting trojans, viruses, malware & other malicious threats. Although it's not necessarily required and can be considered quite "extra", it's always better to be safe and sorry. I have a bunch of open-source applications from outside of the Debian repositories from Github and the likes, so having that extra protection is always good, especially when I can't scan through the whole project that I'm using.
+[ClamAV](https://www.clamav.net/) is a popular open-source antivirus engine for detecting trojans, viruses, malware & other malicious threats. Although it's not necessarily required and can be considered quite "extra", it's always better to be safe than sorry. I have a bunch of open-source applications from outside of the Debian repositories from Github and the likes, so having that extra protection is always good, especially when I can't scan through the whole project that I'm using.
 
 So ClamAV isn't difficult to set up. Simply downloading from the Debian repositories and updating the virus database, ClamAV let's you conduct quick folder scans, as well as seperate applications for real-time protection. 
 
