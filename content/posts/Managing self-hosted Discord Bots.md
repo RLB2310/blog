@@ -63,6 +63,64 @@ commands_list = [
     {'command': '$temp', 'description': 'Check the server temperature'},
 ]
 ```
+I then create an elif statement to check for the prefix of the message being "$help"
+```
+elif message.content.startswith('$help'):
+        command_descriptions = [f"{cmd['command']}: {cmd['description']}" for cmd in commands_list]
+        await message.channel.send("List of available commands:\n```" + '\n'.join(command_descriptions) + "```")
 
+```
+
+Now, whenever someone messages "$help", the bot responds accordingly.
 
 ![text](/assets/Images/Help.png)
+
+
+This is only one example of the bot performing simple tasks. There's a multitude of commands such as getting the temperature of the server, getting the storage status, or listing the documents available.
+
+# Storage state and space 
+
+Determining the state of the storage on my server is helpful to identifying whether I need to make space and whether the server is downloading something at that point in time.
+
+Finding the amount of space is simple enough. using a subprocess call using Python's Subprocess library allows me to send commands in the program as if it was a bash terminal. 
+
+To determine the state of storage (increasing) a measurement is taken between two different time periods, and a comparison is made. An initial message is sent stating the storage size, and then a follow-up if it increases.
+
+The bot first checks the message for the "$storage" command:
+
+```
+elif message.content.startswith("$storage"):
+```
+
+Following this, the storage space free is calculated by calling a command called "get_directory_size":
+```
+        initial_size = get_directory_size(Documents_folder)
+```
+
+The command starts with a variable (total_size) equal to 0, and loops through each file in the folder (recursively) and adds the size to the variable until it has no more files to go over. Then it returns the total size
+
+```
+def get_directory_size(directory):
+   total_size = 0
+   with os.scandir(directory) as it:
+        for entry in it:
+            if entry.is_file():
+                total_size += entry.stat().st_size
+            elif entry.is_dir():
+                total_size += get_directory_size(entry.path)
+   return total_size
+```
+
+Going back to the message, using the total size, it sends a message to the channel regarding the size, then waits 20 seconds before repeating, to then compare the two sizes and determine the acivity of the server as increasing or not.
+
+```
+        gb_init = initial_size / 1024**3
+        await message.channel.send(f"```Collection is currently sized at {gb_init:.2f} GB's```")
+        await message.channel.send(f"Calculating current status...")
+        time.sleep(20)
+        current_size = get_directory_size(Documents_folder)
+        if current_size > initial_size:
+            await message.channel.send(f"```And the size is increasing, now at {current_size / 1024**3:.2f} GB's...```")
+        else:
+            pass
+```
