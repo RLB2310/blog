@@ -14,4 +14,22 @@ Some examples of what I've documented :
 
 - Using Linux for schoolwork and solving the 'Microsoft' problem
 
+- Working with Docker and containerised programs
 
+- Safely and effectively configuring the network (without port-forwarding)
+
+
+The purpose of this webpage is to show the extra curricular work I complete and how I have learn't how to work with computer systems and networks.
+
+
+
+
+
+
+
+
+
+
+
+
+** This webpage is made with Hugo and the TechDoc theme **
