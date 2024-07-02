@@ -5,10 +5,10 @@
 ## Contact Info
 Rylan B 
 
-*Email*
+**Email**
 rlbell2310@gmail.com
 
-*Github*
+**Github**
 https://github.com/RLB2310
 
 A simple webpage documenting my projects, ranging from selfhosting on my Raspberry Pi, to organising and customising my desktops and laptops.
