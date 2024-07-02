@@ -5,7 +5,7 @@ date = 2024-06-28T09:48:06+10:00
 
 # Discord Bots
 
-Discord Bots are an effective way to managing community servers through automation and interacting with API's. Realistically people aren't always available to moderate these things, so bots help.
+[Discord Bots](https://discord.com/blog/how-to-use-discord-apps) are an effective way to managing community servers through automation and interacting with API's. Realistically people aren't always available to moderate these things, so bots help.
 
 I've taken a different approach to Discord Bots. Instead of moderating a server, the bots I have created respond to commands with processes on my [Raspberry Pi](https://rlb2310.github.io/posts/raspberry-pi-as-a-server/) where they are self-hosted.
 
@@ -18,7 +18,7 @@ The bot is also present in a server with my friends. We share a lot of documents
 # General Bot
 ## The backend
 
-To self-host discord bots, you need a device that is on as often as possible. This could be a cloud instance such as Linode, or just a spare computer.
+To self-host discord bots, you need a device that is on as often as possible. This could be a cloud instance such as [Linode](https://www.linode.com/), or just a spare computer.
 
 Discord has it's own API that is built in multiple programming languages such as Javascript and Python. Because I already have experience in Python, I decided to use that.
 
@@ -153,7 +153,7 @@ Finding a suitable solution to file sharing large documents was difficult to fin
 
 Next I searched for self-hosted apps. [Wormhole]() is a popular app, which is open-source and allows unlimited file transfers as it uses public relays to conduct transfers. I used Wormhole for testing and noticed that it would often pause or cancel in the middle of a transfer. This was problematic, especially during large multi-gigabyte transfers. So Wormhole wasn't going to work.
 
-[Croc]() is essentially the same as Wormhole except it's written in Golang and includes a couple more key features. Croc hashes files before the transfer starts, using encryption to protect your files. Similarly to Wormhole, Croc generates a code that another computer (local or outside of the network) can use to transfer the files/folder. 
+[Croc](https://github.com/schollz/croc) is essentially the same as Wormhole except it's written in [Golang](https://go.dev/) and includes a couple more key features. Croc hashes files before the transfer starts, using encryption to protect your files. Similarly to Wormhole, Croc generates a code that another computer (local or outside of the network) can use to transfer the files/folder. 
 
 A key difference that Croc includes that makes it applicable in my situation is the ability to continue/resume downloads that have cancelled. It requires you to create a code for the same files/folder and for the other computer to continue the transfer. As to how it continues and understands the files that needs to be resumed, I am unsure of. It lacks extensive documentation, however, if I do so much as to change anythng in the files (properties from name, bytes within it) the resume won't pick up. This most probably means that it compares the hashes of the files to determine what files are the same.
 
@@ -163,3 +163,13 @@ Croc required a large amount of work from me. I can't always provide the codes f
 
 ## Croc and Discord
    
+The approach I've taken is very similar to the general bot shown previously. The Croc bot is set to listen to a specific channel to reduce the amount of clutter in the general channel. 
+
+Once the bot recieves the command alongisde the document name as an argument, it then conducts a server-side check for the name, and if found, it will generate a croc code with the subprocess library.
+
+#INSERT CODE
+
+This removes the need for me to interact with my server at all when another person is conducting a transfer. For updates, changes, and when it occasionally breaks I do need to intervene though.
+
+
+*Overall* I'd say that investing time into Discord bots has made life a lot easier when it comes to iteracting with my homelab. 
