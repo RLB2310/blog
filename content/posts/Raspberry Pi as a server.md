@@ -34,3 +34,12 @@ Managing all the docker containers was complete through [Portainer](https://www.
 One downside of selfhosting is the lack of public access. Obviously you can port-forward, but that comes with extreme risks for not only your devices but the whole network. So that was immediately not an option for me. Next up was using a VPN. I had learnt of businesses who use VPNs for remote workers, giving access to company files and resources. So this was my next option. It allowed me to have the same amount of access to my resources, without compromising the rest of my network. The most popular approach to this is selfhosting a [Wireguard](https://www.wireguard.com/) or [OpenVPN](https://openvpn.net/) instance. Quite a complicated approach, and lacked some features I wanted such as the ability to use my Raspberryi Pi as an exit-node. Finally, I had settled for [Tailscale](https://tailscale.com/). It was a perfect solution to accessing my server from other networks (except school, that'll be covered in Linux for school), all while being completely free for hobbyists like myself.
 
 ![text](/assets/Images/Tailscale.png)
+
+Tailscale provides individual users with a free Tailnet with a couple of devices meaning that it allows me to add my server, phone, two laptops, and my desktop. I can now use the provided Tailscale address of my server to host services that I want to access outside of the network, such as a Navidrome for music. 
+
+By doing this, I have removed the need to port forward at all, keeping everything closed on my network. This was the primary concern with providing external access to services.
+
+
+Realistically there's so much more to go over with the Raspberry Pi and services I've set up, so some of the more complex and tedious services will have their own page. It will probably include things like like Nginx reverse-proxy for internal DNS control, as well as using Silverbullet for note taking with a server.
+
+
