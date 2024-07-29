@@ -167,9 +167,10 @@ The approach I've taken is very similar to the general bot shown previously. The
 
 Once the bot recieves the command alongisde the document name as an argument, it then conducts a server-side check for the name, and if found, it will generate a croc code with the subprocess library.
 
-#INSERT CODE
+![text](/assets/Images/croc_example.png)
+
 
 This removes the need for me to interact with my server at all when another person is conducting a transfer. For updates, changes, and when it occasionally breaks I do need to intervene though.
 
 
-*Overall* I'd say that investing time into Discord bots has made life a lot easier when it comes to iteracting with my homelab. 
+*Overall* I'd say that investing time into Discord bots has made life a lot easier when it comes to iteracting with my homelab, as well as providing automnated services for my friends and family. The degree of autonomy is only so high, and to be honest I think majority of the hard work and heavy lifting is taken care of.
