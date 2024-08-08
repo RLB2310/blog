@@ -54,3 +54,8 @@ server {
 }
 
 ```
+
+Configuring individual sites with Nginx is pretty copy-and-paste, meaning that once you have set up one site, it's super easy to use a simialr configuration for the next. 
+
+With Nginx successfully configured to forward the HTTPS request to the Silverbullet HTTP back-end, I have been able to use the app on all of my devices, syncing changes to my server when they are made.
+
