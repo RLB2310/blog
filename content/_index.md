@@ -6,7 +6,7 @@
 Rylan B 
 
 **Email**
-REDACTED
+rlbell2310@gmail.com
 **Github**
 https://github.com/RLB2310
 
