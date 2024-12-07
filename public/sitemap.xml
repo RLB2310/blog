@@ -2,17 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/</loc>
+    <loc>localhost/</loc>
+    <lastmod>2024-11-18T16:26:52+11:00</lastmod>
+  </url><url>
+    <loc>localhost/posts/</loc>
+    <lastmod>2024-11-18T16:26:52+11:00</lastmod>
+  </url><url>
+    <loc>localhost/posts/setting-up-openwrt-on-a-rpi/</loc>
+    <lastmod>2024-11-18T16:26:52+11:00</lastmod>
+  </url><url>
+    <loc>localhost/posts/power-management-and-linux-laptops/</loc>
+    <lastmod>2024-09-10T17:38:44+10:00</lastmod>
+  </url><url>
+    <loc>localhost/posts/reverse-proxy-internal-dns-control-pihole-and-more/</loc>
+    <lastmod>2024-07-02T11:05:31+10:00</lastmod>
+  </url><url>
+    <loc>localhost/posts/managing-self-hosted-discord-bots/</loc>
+    <lastmod>2024-06-28T09:48:06+10:00</lastmod>
+  </url><url>
+    <loc>localhost/posts/note-taking-with-silverbullet/</loc>
+    <lastmod>2024-06-28T08:57:03+10:00</lastmod>
+  </url><url>
+    <loc>localhost/posts/raspberry-pi-as-a-server/</loc>
     <lastmod>2024-06-26T16:32:01+10:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/</loc>
-    <lastmod>2024-06-26T16:32:01+10:00</lastmod>
+    <loc>localhost/categories/</loc>
   </url><url>
-    <loc>//localhost:1313/posts/raspberry-pi-as-a-server/</loc>
-    <lastmod>2024-06-26T16:32:01+10:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/</loc>
-  </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>localhost/tags/</loc>
   </url>
 </urlset>

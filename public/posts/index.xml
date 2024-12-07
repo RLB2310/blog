@@ -2,18 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Rylan&#39;s Tech Blog</title>
-    <link>//localhost:1313/posts/</link>
+    <link>localhost/posts/</link>
     <description>Recent content in Posts on Rylan&#39;s Tech Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Jun 2024 16:32:01 +1000</lastBuildDate>
-    <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Nov 2024 16:26:52 +1100</lastBuildDate>
+    <atom:link href="localhost/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting Up OpenWRT on a RPI</title>
+      <link>localhost/posts/setting-up-openwrt-on-a-rpi/</link>
+      <pubDate>Mon, 18 Nov 2024 16:26:52 +1100</pubDate>
+      <guid>localhost/posts/setting-up-openwrt-on-a-rpi/</guid>
+      <description>&lt;h1 id=&#34;raspberry-pi-as-a-router&#34;&gt;Raspberry Pi, as a router&lt;/h1&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve decided that the Raspberry Pi 4 isn&amp;rsquo;t holding up as a NAS, Music server, Plex Serve, etc. (understandably), so i&amp;rsquo;m turning it into a router because why not? And i&amp;rsquo;d like to learn about VLAN&amp;rsquo;s and networking in general.&lt;/p&gt;&#xA;&lt;h2 id=&#34;firmware--os-choice&#34;&gt;Firmware / OS Choice&lt;/h2&gt;&#xA;&lt;p&gt;Unfortunately, the more popular custom router firmware, PFsense (or Opnsense, even) don&amp;rsquo;t support ARM architecture, so OpenWRT is the next choice.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Power Management and Linux Laptops</title>
+      <link>localhost/posts/power-management-and-linux-laptops/</link>
+      <pubDate>Tue, 10 Sep 2024 17:38:44 +1000</pubDate>
+      <guid>localhost/posts/power-management-and-linux-laptops/</guid>
+      <description>&lt;h1 id=&#34;linux-on-laptops&#34;&gt;Linux on laptops&lt;/h1&gt;&#xA;&lt;p&gt;Most laptops are either assumed to be used for Windows, if not, they most likely come with it pre-installed. This works for most people. It&amp;rsquo;s simple, and skips the repetitive and painful process of the Windows install. But with Windows becoming more and more bloated by the update, with redundant AI features and random apps, old hardware is being left in the dust, and laptop batteries are draining faster than ever. So, I&amp;rsquo;ve decided to turn all my (2 whole laptops) into Linux machines, in an attempt to increase battery life and maybe get a few more hours out of them each day.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reverse Proxy, Internal DNS Control, Pihole and More</title>
+      <link>localhost/posts/reverse-proxy-internal-dns-control-pihole-and-more/</link>
+      <pubDate>Tue, 02 Jul 2024 11:05:31 +1000</pubDate>
+      <guid>localhost/posts/reverse-proxy-internal-dns-control-pihole-and-more/</guid>
+      <description>&lt;h1 id=&#34;nginx-for-internal-dns-control&#34;&gt;Nginx for internal DNS control&lt;/h1&gt;&#xA;&lt;p&gt;When interacting with my server, it&amp;rsquo;s web services. and all the applications, it becomes tedious having to manually type in the IP address alongside the ports everytime. Luckily, reverse-proxies like Nginx are an exact solution to this.&lt;/p&gt;&#xA;&lt;p&gt;A &lt;a href=&#34;https://en.wikipedia.org/wiki/Reverse_proxy&#34;&gt;reverse-proxy&lt;/a&gt; is usually a server that sits in front of web servers and forwards requests to them. They are usually confused with &lt;a href=&#34;https://en.wikipedia.org/wiki/Load_balancing_(computing)&#34;&gt;load-balancers&lt;/a&gt;, and while they do have the ability to distribute tasks over different servers, they have the added benefit of providing ononymity by masking the origin IP.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Managing Self Hosted Discord Bots</title>
+      <link>localhost/posts/managing-self-hosted-discord-bots/</link>
+      <pubDate>Fri, 28 Jun 2024 09:48:06 +1000</pubDate>
+      <guid>localhost/posts/managing-self-hosted-discord-bots/</guid>
+      <description>&lt;h1 id=&#34;discord-bots&#34;&gt;Discord Bots&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://discord.com/blog/how-to-use-discord-apps&#34;&gt;Discord Bots&lt;/a&gt; are an effective way to managing community servers through automation and interacting with API&amp;rsquo;s. Realistically people aren&amp;rsquo;t always available to moderate these things, so bots help.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve taken a different approach to Discord Bots. Instead of moderating a server, the bots I have created respond to commands with processes on my &lt;a href=&#34;https://rlb2310.github.io/posts/raspberry-pi-as-a-server/&#34;&gt;Raspberry Pi&lt;/a&gt; where they are self-hosted.&lt;/p&gt;&#xA;&lt;p&gt;This provides me with easy access to my server, giving me quick functions that I can use anywhere without having to SSH in, everytime I wanted to, say, turn on a service. Instead, I set a command for the bot to listen for in a text channel, and then respond accordingly when present.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Note Taking With Silverbullet</title>
+      <link>localhost/posts/note-taking-with-silverbullet/</link>
+      <pubDate>Fri, 28 Jun 2024 08:57:03 +1000</pubDate>
+      <guid>localhost/posts/note-taking-with-silverbullet/</guid>
+      <description>&lt;h1 id=&#34;the-problem&#34;&gt;The problem&lt;/h1&gt;&#xA;&lt;p&gt;Majority of the notes I take for school are located under Microsoft&amp;rsquo;s OneNote. Looking towards the future, I&amp;rsquo;d lose the education license after I had finished school, and considering I don&amp;rsquo;t want to change note-taking apps after I&amp;rsquo;ve already got so much, I decided it would be best to change now.&lt;/p&gt;&#xA;&lt;h1 id=&#34;obsidian&#34;&gt;Obsidian&lt;/h1&gt;&#xA;&lt;p&gt;Obsidian is a closed-source markdown note application, available on all platforms. It seemed perfect. However the syncing of notes was a paid feature, and although using external applications such as &lt;a href=&#34;&#34;&gt;Syncthing&lt;/a&gt; or &lt;a href=&#34;&#34;&gt;Nextcloud&lt;/a&gt; was available, both had their own issues however. Syncthing was extremely inconsistent at file versioning, to the point where I would spent more time finding the correct version then actually writing notes. Nextcloud was really volatile, breaking at least once a week and forcing me to recreate the whole Docker container again.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Raspberry Pi as a Server</title>
-      <link>//localhost:1313/posts/raspberry-pi-as-a-server/</link>
+      <link>localhost/posts/raspberry-pi-as-a-server/</link>
       <pubDate>Wed, 26 Jun 2024 16:32:01 +1000</pubDate>
-      <guid>//localhost:1313/posts/raspberry-pi-as-a-server/</guid>
-      <description>Setting up a self-hosted home server Why settle for something done poorly when you can do it better yourself? That&amp;rsquo;s the approach I took with creating a general, all-in-one media server / NAS. The main concern was relying on external, third-party software and services to conduct daily tech and media activities. The solution? Do it yourself. I&amp;rsquo;ve done exactly that, setting up a Raspberry Pi that I can tinker with and use daily, helping not only me but also my friends and family.</description>
+      <guid>localhost/posts/raspberry-pi-as-a-server/</guid>
+      <description>&lt;h1 id=&#34;setting-up-a-self-hosted-home-server&#34;&gt;Setting up a self-hosted home server&lt;/h1&gt;&#xA;&lt;p&gt;Why settle for something done poorly when you can do it better yourself? That&amp;rsquo;s the approach I took with creating a general, all-in-one media server / NAS. The main concern was relying on external, third-party software and services to conduct daily tech and media activities. The solution? Do it yourself. I&amp;rsquo;ve done exactly that, setting up a Raspberry Pi that I can tinker with and use daily, helping not only me but also my friends and family.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
