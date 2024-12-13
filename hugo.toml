@@ -1,5 +1,5 @@
 baseurl      = "localhost"
-title        = "I LOVE YOU SO MUCH RAEYA"
+title        = "Rylan's Tech Blog"
 theme        = "hugo-theme-techdoc"
 languageCode = "en-us"
 paginate     = 10
